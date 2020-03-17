@@ -1,14 +1,13 @@
+
 <?php
-$hostName = 'localhost';
-$userName = 'root';
-$pwd = '';
-$dbName = 'CSE2020';
-    
-$conn = mysqli_connect($hostName, $userName, $pwd, $dbName);
-if ($conn){
-    echo "Conneted Successfully.";
-}
-else{
-    echo "Connection failed. " + mysqli_connect_error();
-}
+
+$host = "localhost";
+$Uname = "root";
+$Pwd = "";
+$dbname = "cse2020";
+$conn = new mysqli($host, $Uname, $Pwd, $dbname);
+if (mysqli_connect_error()) 
+{
+    die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+} 
 ?>
