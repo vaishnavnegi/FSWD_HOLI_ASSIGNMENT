@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <script type="text/javascript" src="data.js"></script>
+        <title>Q3:JSON PARSING</title>
+        <style>
+            .ipbox{
+              background-color:honeydew;
+              color:navy;
+              text-align: center;
+              font-size: 3vw;
+              cursor: grab;
+              border-radius:5px;
+              width:50vw;
+              height: 5vw;
+            }
+
+            .button {
+              background-color: #4CAF50;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-align: center;
+              text-decoration:none;
+              display: inline-block;
+              font-size:x-large;
+              margin:10px 5px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+              border-radius:15px;
+              width:50vw;
+              height: 5vw;
+            }
+            
+            .button1 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #4CAF50;
+            }
+            
+            .button1:hover {
+              background-color: #4CAF50;
+              color: white;
+            }
+            
+            .button2 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #008CBA;
+            
+            }
+            
+            .button2:hover {
+              background-color: #008CBA;
+              color: white;
+            }
+
+            .button3 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid rgb(186, 0, 0);
+            
+            }
+            
+            .button3:hover {
+              background-color: rgb(186, 0, 0);
+              color: white;
+            }
+
+            .div
+            {
+                text-align: center;
+            }
+            </style>
+    </head>
+    
+<body style="background-color:azure;">
+    <div class="div">
+        <h1 style="text-align: center; font-size:5vw; background-color:red; color:gold;">---PARSING JSON DATA PART 2---</h1>
+		<h2 style="text-align: center; font-size:3vw; background-color:red; color:gold;">Enter the text</h3>
+		<input  class="ipbox" type="text" id="inputbox" placeholder="Enter here."><br>
+        <button class="button button1" onclick="finder()" ><strong>FIND</strong></button>
+        <button type="button" class="button button2" id="reset" onclick="location.reload()"><strong>RESET</strong></button><br>
+        <p style="text-align: center; font-size:3vw; background-color:lawngreen; color:crimson;">***OUTPUT***</p>
+        <p class="display" id="display" style="text-align: center; font-size:2vw; background-color:lawngreen; color:crimson;"></p>
+    <button type="button" class="button button3" id="esc" onclick="window.close()"><strong>EXIT</strong></button><br>
+    </div>	
+</body>
+</html>
