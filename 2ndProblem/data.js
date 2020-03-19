@@ -1,5 +1,4 @@
-var jsondata=[
-  {
+var jsondata = [{
     "userId": 1,
     "id": 1,
     "title": "delectus aut autem",
@@ -1198,5 +1197,41 @@ var jsondata=[
     "id": 200,
     "title": "ipsam aperiam voluptates qui",
     "completed": false
+  }];
+function finder()
+{
+  var max_id=0,min_id=0,count=0,max_count=Number.MIN_VALUE,min_count=Number.MIN_VALUE;
+  var max_counter=0,min_counter=0;
+  var max_array = [],min_array = [],min_temp = [],max_temp = [];
+  var task_completed = [0,0,0,0,0,0,0,0,0,0];
+  var min_tasks, max_tasks;
+  var min_Id=[];
+  var max_Id=[];
+  for(x in jsondata)
+  {
+    if(jsondata[x]["completed"] == true)
+      task_completed[jsondata[x]["userId"]-1]++;
   }
-]
+  min_tasks=task_completed[0];
+  max_tasks=task_completed[0];
+  for(i=1 ; i<task_completed.length; i++)
+  {
+      if(min_tasks > task_completed[i])
+      min_tasks=task_completed[i];
+      if(max_tasks < task_completed[i])
+      max_tasks=task_completed[i];
+  }
+  
+  for(i=1 ; i<task_completed.length; i++)
+  {
+      if(min_tasks == task_completed[i])
+      min_Id.push(i+1);
+      if(max_tasks == task_completed[i])
+      max_Id.push(i+1);
+  }
+  document.getElementById('display').innerHTML += "Tasks completed by users 1-10 :-" + task_completed + "<br>";
+  document.getElementById('display').innerHTML += "Max tasks completed :-" + max_tasks + "<br>";
+  document.getElementById('display').innerHTML += "All users with max tasks :-" + max_Id+ "<br>";
+  document.getElementById('display').innerHTML += "Min Count:-" + min_tasks + "<br>";
+  document.getElementById('display').innerHTML += "All users with min tasks :-" + min_Id + "<br>";
+}
