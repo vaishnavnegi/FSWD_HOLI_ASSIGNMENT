@@ -1200,9 +1200,6 @@ var jsondata = [{
   }];
 function finder()
 {
-  var max_id=0,min_id=0,count=0,max_count=Number.MIN_VALUE,min_count=Number.MIN_VALUE;
-  var max_counter=0,min_counter=0;
-  var max_array = [],min_array = [],min_temp = [],max_temp = [];
   var task_completed = [0,0,0,0,0,0,0,0,0,0];
   var min_tasks, max_tasks;
   var min_Id=[];
@@ -1221,7 +1218,6 @@ function finder()
       if(max_tasks < task_completed[i])
       max_tasks=task_completed[i];
   }
-  
   for(i=1 ; i<task_completed.length; i++)
   {
       if(min_tasks == task_completed[i])
