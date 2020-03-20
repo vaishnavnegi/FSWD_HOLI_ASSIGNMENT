@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <script type="text/javascript" src="gamebox.js"></script>
+
+        <title>Q5: NUMBER GUESSING GAME</title>
+        <style>
+            .ipbox{
+              background-color:honeydew;
+              color:navy;
+              text-align: center;
+              font-size: 3vw;
+              cursor: grab;
+              border-radius:5px;
+              width:50vw;
+              height: 5vw;
+            }
+
+            .button {
+              background-color: #4CAF50;
+              border: none;
+              color: white;
+              padding: 16px 32px;
+              text-align: center;
+              text-decoration:none;
+              display: inline-block;
+              font-size:x-large;
+              margin:10px 5px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+              border-radius:15px;
+              width:50vw;
+              height: 5vw;
+            }
+            
+            .button1 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #4CAF50;
+            }
+            
+            .button1:hover {
+              background-color: #4CAF50;
+              color: white;
+            }
+            
+            .button2 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #008CBA;
+            
+            }
+            
+            .button2:hover {
+              background-color: #008CBA;
+              color: white;
+            }
+
+            .button3 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid rgb(186, 0, 0);
+            
+            }
+            
+            .button3:hover {
+              background-color: rgb(186, 0, 0);
+              color: white;
+            }
+
+            .div
+            {
+                text-align: center;
+            }
+            </style>
+    </head>
+        
+<body style="background-color:azure;">
+    <div class="div">
+        <h1 style="text-align: center; font-size:5vw; background-color:red; color:gold;">Can You Geuss the Number ?!?!</h1>
+        <p style="text-align: left; font-size:3vw; background-color:lawngreen; color:crimson;"><strong>We have selected a random number between 1-100.<br>Let's see if you can guess it in less than 10 turns.<br>We will try to help you by telling you if you were too hih or too low.</strong></p>
+        <input type="number" size="3" placeholder="Enter guess here." class="ipbox" id="guess">
+        <button type="button" class="button button2" id="submit" onclick="checkguess()"><strong>SUBMIT GUESS</strong></button><br>
+        <p style="text-align: left; font-size:3vw; background-color:lawngreen; color:crimson;" id="pguessarr">Your previous guesses are : </p>
+        <p id="status" style="margin:auto; text-align:left; font-size:3vw; background-color:azure; color:gold;"></p><br>
+        <p id="guide" style="margin:auto; text-align:left; font-size:3vw; background-color:lawngreen; color:crimson;"></p>
+        <button type="button" class="button button2" id="newg" onclick="location.reload()"><strong>NEW GAME</strong></button><br>
+      </div>	
+</body>
+</html>
