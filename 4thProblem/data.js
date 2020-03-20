@@ -27064,3 +27064,54 @@ var jsondata = [{
 	},
 	"status": "recommendation_found"
 }];
+function parsinghuge()
+{		
+	jsondata = jsondata["0"]["body"]["Recommendations"];
+	for(i in jsondata)
+	{
+		document.getElementById('display').innerHTML += "-->" + jsondata[i]["RestaurantName"] + "<br>";
+		jsondata1 = jsondata[i]["menu"];
+		for(j1 in jsondata1)
+		{
+			if(jsondata1[j1]["type"] == "sectionheader")
+			{
+				jsondata2 = jsondata1[j1]["children"];
+				for(j2 in jsondata2)
+				{
+					if(jsondata2[j2]["type"] == "item")
+					{
+						if(jsondata2[j2]["selected"] == "1")
+						{
+							document.getElementById('display').innerHTML += "------>" + jsondata2[j2]["name"] + "<br>";
+							jsondata3 = jsondata2[j2]["children"];
+							for(j3 in jsondata3)
+							{
+								recur(jsondata3,j3);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+function recur(rj,rec_json)
+{
+	if(typeof rj === 'undefined' || typeof rec_json === 'undefined')
+	{
+		return;
+	}
+	if(typeof rj[rec_json] !== 'undefined' && rj[rec_json]["selected"] == "1")
+	{
+		document.getElementById('display').innerHTML += "------------->" + rj[rec_json]["name"] + "<br>";
+		rj1 = rj[rec_json]["children"];
+		for(rec_json1 in rj1)
+		{
+			recur(rj1,rec_json1);	
+		}
+	}else
+	{
+		return;
+	}
+}
